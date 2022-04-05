@@ -1,0 +1,4 @@
+*.ini
+*.exe
+a.out
+lex.yy.c
