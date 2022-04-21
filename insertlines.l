@@ -6,7 +6,7 @@ int line_no = 0;
 line .*\n
 
 %%
-{line} { line_no++; printf("%10d %s", line_no, yytext); fprintf(yyout, "%10d %s", line_no, yytext); }
+{line} { line_no++; printf("%10d %s", line_no, yytext); fprintf(yyout, "%d %s", line_no, yytext); }
 
 %%
 
@@ -14,9 +14,9 @@ int yywrap(){}
 
 int main()
 {
-	yyin = fopen("samplefile.txt", "r");
+	yyin = fopen("input.txt", "r");
 	
-	yyout = fopen("samplefile_out.txt", "w");
+	yyout = fopen("output.txt", "w");
 	yylex();
 	return 0;
 }
