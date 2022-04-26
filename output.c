@@ -2,8 +2,10 @@
 int main()
 {
 	int s;
-	readf("Enter a number: ");
-	writef("%d",&s);
+	printf("Enter a number: ");
+	
+	scanf("%d",&s);
+	
 	s = 1+2;
 	return s;
 }

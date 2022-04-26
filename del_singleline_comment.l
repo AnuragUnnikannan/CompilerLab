@@ -1,15 +1,24 @@
 %{
-#include <stdio.h>
+#include<stdio.h>
+
 %}
+ 
 
 %%
-"//"([a-z][A-Z]|[0-9]" ")* {}
-
+\/\/(.*) {};
+\/\*(.*\n)*.*\*\/ {};
 %%
-int yywrap(void){}
+ 
 int main()
 {
-	printf("Enter a string to delete single line comment =>");
-	yylex();
-	return 0;
+    yyin=fopen("input.c","r");
+    yyout=fopen("output.c","w");
+    yylex();
+    
+     
+}
+
+int yywrap()
+{
+    return 1;
 }
